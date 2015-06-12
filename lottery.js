@@ -32,6 +32,9 @@
             var winnerIndex = Math.floor( Math.random() * members.length );
             var winner = members.splice(winnerIndex,1);
             this.winners.push(winner[0]);
+
+            //var removeWinner = winner[0]
+            //var removedWinner = members.filter(function(element){return element !== removeWinner});
         };
         return this.winners;
     };
