@@ -1,6 +1,6 @@
 
-    var Lottery = function(size){
-        this.size = size;
+    var Lottery = function(prizeCount){
+        this.prizeCount = prizeCount;
         this.members = [];
         this.winners = [];
     };
@@ -24,9 +24,9 @@
     };
     Lottery.prototype.getWinners = function(){
         this.winners = [];
-        if (this.size >= this.members.length) return this.members;
+        if (this.prizeCount >= this.members.length) return this.members;
         var members = this.members.concat();
-        var winnersCount = this.size;
+        var winnersCount = this.prizeCount;
 
         while ( winnersCount===0,winnersCount--){
             var winnerIndex = Math.floor( Math.random() * members.length );
