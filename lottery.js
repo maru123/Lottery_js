@@ -47,8 +47,3 @@
             return false;
         };
     };
-    Lottery.prototype.isMembersCount = function(){
-        if(this.membersCount === 0 ){
-            return false;
-        };
-    };
