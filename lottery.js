@@ -23,7 +23,7 @@
         return false;
     };
     Lottery.prototype.getWinners = function(){
-        this.resetWinners();
+        this.winners = [];
         if (this.size >= this.members.length) return this.members;
         var members = this.members.concat();
         var winnersCount = this.size;
@@ -36,7 +36,4 @@
             this.winners.push(winner[0]);
         };
         return this.winners;
-    };
-    Lottery.prototype.resetWinners = function(){
-        this.winners = [];
     };
