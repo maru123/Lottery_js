@@ -17,10 +17,8 @@
         return false;
     };
     Lottery.prototype.isNotNewMember = function(name){
-        for (var i = 0; i < this.members.length; i++) {
-            if (this.members[i] === name){
-                return true;
-            }
+        if (this.members.indexOf(name) > -1) {
+            return true;
         }
         return false;
     };
