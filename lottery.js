@@ -37,9 +37,6 @@
         };
         return this.winners;
     };
-    Lottery.prototype.AllWinners = function(){
-        this.winners = this.members.concat();
-    };
     Lottery.prototype.resetWinners = function(){
         this.winners = [];
     };
