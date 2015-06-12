@@ -39,14 +39,43 @@ lottery.isMembers('tanaka');
 function easyTest(){
     var lottery = new Lottery(2);
 
+    console.log("Case1: Must be returns valid winners")
     //add
     lottery.add('maruyama');
     lottery.add('terada');
     lottery.add('miyamoto');
     lottery.add('tanaka');
-
     //getWinners
     console.log(lottery.getWinners());
+    console.log(lottery.getWinners());
+    console.log(lottery.getWinners());
+    console.log("/ Case1 End /");
+
+    console.log("Case2: Must be all members are winner.")
+    var lottery2 = new Lottery(3);
+    lottery2.add('maruyama');
+    lottery2.add('terada');
+    var winners = lottery2.getWinners();
+    // expect: true
+    console.log(winners.indexOf("maruyama") > -1 && winners.indexOf("terada") > -1);
+    console.log("/ Case2 End /");
+
+    console.log("Case3: Must be returns an empty array");
+    var lottery3 = new Lottery(0);
+    lottery3.add('maruyama');
+    lottery3.add('terada');
+    var winners = lottery3.getWinners();
+    // expect: true
+    console.log(typeof winners == "object" && winners.length == 0);
+    console.log("/ Case3 End /");
+
+    console.log("Case4: Must be returns an empty array");
+    var lottery4 = new Lottery(0);
+    var winners = lottery4.getWinners();
+    // expect: true
+    console.log(typeof winners == "object" && winners.length == 0);
+    console.log("/ Case4 End /");
+
 }
 easyTest();
 </script>
