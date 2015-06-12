@@ -47,10 +47,10 @@ function easyTest(){
     console.log("Case1: Must be returns valid winners");
     var lottery = new Lottery(2);
     //add
-    lottery.add('maruyama');
-    lottery.add('terada');
-    lottery.add('miyamoto');
-    lottery.add('tanaka');
+    lottery.add('maruyama',1);
+    lottery.add('terada',1);
+    lottery.add('miyamoto',1);
+    lottery.add('tanaka',1);
     //getWinners
     console.log(lottery.getWinners());
     console.log(lottery.getWinners());
@@ -59,8 +59,8 @@ function easyTest(){
 
     console.log("Case2")
     var lottery2 = new Lottery(3);
-    lottery2.add('maruyama');
-    lottery2.add('terada');
+    lottery2.add('maruyama',1);
+    lottery2.add('terada',1);
     var winners = lottery2.getWinners();
     var expect2 = (winners.indexOf("maruyama") > -1 && winners.indexOf("terada") > -1);
     expectation(expect2, "Must be all members are winner.");
@@ -68,8 +68,8 @@ function easyTest(){
 
     console.log("Case3");
     var lottery3 = new Lottery(0);
-    lottery3.add('maruyama');
-    lottery3.add('terada');
+    lottery3.add('maruyama',1);
+    lottery3.add('terada',1);
     var winners = lottery3.getWinners();
     // expect: true
     var expect3 = (typeof winners == "object" && winners.length == 0);
@@ -86,13 +86,28 @@ function easyTest(){
     console.log("Case5");
     var lottery5 = new Lottery(2);
     expectation(!lottery5.add(''), "Must be returns false");
-    lottery5.add('terada');
-    expectation(!lottery5.add('terada'), "Must be returns false");
+    lottery5.add('terada',1);
+    expectation(!lottery5.add('terada',1), "Must be returns false");
     var winners5 = lottery5.getWinners();
     var expect5 = (winners5.length == 1 && winners5.indexOf("terada") == 0);
     expectation(expect5, "Must be returns ['terda']");
     console.log("/ Case5 End /");
 
+    console.log("Case6");
+    var lottery6 = new Lottery(3);
+    var winners = lottery6.getWinners();
+    var expect6 = (typeof winners == "object" && winners.length == 0);
+    expectation(expect6, "Must be returns an empty array");
+    console.log("/ Case6 End /");
+
+    console.log("Case7");
+    var lottery7 = new Lottery(3);
+    lottery7.add('maruyama',1);
+    lottery7.add('terada',1);
+    lottery7.add('miyamoto',1);
+    lottery7.add('tanaka',4);
+    console.log (lottery7.getWinners());
+    console.log("/ Case7 End /");
 }
 easyTest();
 </script>
