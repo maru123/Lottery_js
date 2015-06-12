@@ -1,7 +1,6 @@
 
     var Lottery = function(size){
         this.size = size;
-        this.membersCount = 0;
         this.members = [];
         this.winners = [];
     };
@@ -15,7 +14,7 @@
         if (name.length === 0){
             return false;
         };
-        for (var i = 0; i < this.membersCount; i++) {
+        for (var i = 0; i < this.members.length; i++) {
             if (this.members[i] === name){
                 return false;
             };
