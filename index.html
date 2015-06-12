@@ -35,11 +35,17 @@
 lottery.isMembers('')
 lottery.isMembers('tanaka');
 */
-
+function expectation(expect){
+    if(expect) {
+        return console.log("Success!!");
+    } else {
+        alert("Fail!!");
+    }
+}
 function easyTest(){
-    var lottery = new Lottery(2);
 
-    console.log("Case1: Must be returns valid winners")
+    console.log("Case1: Must be returns valid winners");
+    var lottery = new Lottery(2);
     //add
     lottery.add('maruyama');
     lottery.add('terada');
@@ -56,8 +62,8 @@ function easyTest(){
     lottery2.add('maruyama');
     lottery2.add('terada');
     var winners = lottery2.getWinners();
-    // expect: true
-    console.log(winners.indexOf("maruyama") > -1 && winners.indexOf("terada") > -1);
+    var expect2 = (winners.indexOf("maruyama") > -1 && winners.indexOf("terada") > -1);
+    expectation(expect2);
     console.log("/ Case2 End /");
 
     console.log("Case3: Must be returns an empty array");
@@ -66,15 +72,17 @@ function easyTest(){
     lottery3.add('terada');
     var winners = lottery3.getWinners();
     // expect: true
-    console.log(typeof winners == "object" && winners.length == 0);
+    var expect3 = (typeof winners == "object" && winners.length == 0);
+    expectation(expect3);
     console.log("/ Case3 End /");
 
     console.log("Case4: Must be returns an empty array");
     var lottery4 = new Lottery(0);
     var winners = lottery4.getWinners();
-    // expect: true
-    console.log(typeof winners == "object" && winners.length == 0);
+    var expect4 = (typeof winners == "object" && winners.length == 0);
+    expectation(expect4);
     console.log("/ Case4 End /");
+
 
 }
 easyTest();
