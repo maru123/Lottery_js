@@ -26,6 +26,7 @@
     };
     Lottery.prototype.getWinners = function(){
         this.resetWinners();
+        if (this.size >= this.members.length) return this.members;
         var members = this.members.concat();
         var winnersCount = this.size;
         var winnerIndex;
@@ -46,7 +47,7 @@
             return false;
         };
     };
-    Lottery.prototype.isMembersCunt = function(){
+    Lottery.prototype.isMembersCount = function(){
         if(this.membersCount === 0 ){
             return false;
         };
