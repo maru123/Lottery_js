@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Lottery</title>
+</head>
+<body>
+    <h1>Lottery<h1>
+<script type='text/javascript' src='./lottery.js'></script>
+<script type='text/javascript'>
+
+    //instance
+    var lottery = new Lottery(2);
+
+    //add
+    lottery.add('maruyama');
+    lottery.add('terada');
+    lottery.add('miyamoto');
+    lottery.add('tanaka');
+
+    //check before getWinners
+    lottery.isSize();
+    lottery.isMembersCunt();
+
+    //getWinners
+    lottery.getMembers();
+    lottery.getWinners();
+/*
+    //onec more
+    lottery.resetWinners();
+    lottery.getWinners();
+*/
+/*
+//check before add
+lottery.isMembers('')
+lottery.isMembers('tanaka');
+*/
+</script>
+</body>
+</html>
