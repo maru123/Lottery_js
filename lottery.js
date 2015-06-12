@@ -25,6 +25,7 @@
         this.membersCount = this.members.length;
     };
     Lottery.prototype.getWinners = function(){
+        this.resetWinners();
         var members = this.members.concat();
         var winnersCount = this.size;
         var winnerIndex;
