@@ -35,6 +35,7 @@
             winner = m.splice(winnerIndex,1);
             this.winners.push(winner[0]);
         };
+        return this.winners;
     };
     Lottery.prototype.AllWinners = function(){
         this.winners = this.members.concat();
