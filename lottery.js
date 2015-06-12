@@ -25,14 +25,14 @@
         this.membersCount = this.members.length;
     };
     Lottery.prototype.getWinners = function(){
-        var m = this.members.concat();
-        var n = this.size;
+        var members = this.members.concat();
+        var winnersCount = this.size;
         var winnerIndex;
         var winner;
 
-        while ( n===0,n--){
-            winnerIndex = Math.floor( Math.random() * this.members.length )
-            winner = m.splice(winnerIndex,1);
+        while ( winnersCount===0,winnersCount--){
+            winnerIndex = Math.floor( Math.random() * members.length )
+            winner = members.splice(winnerIndex,1);
             this.winners.push(winner[0]);
         };
         return this.winners;
