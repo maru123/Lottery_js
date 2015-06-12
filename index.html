@@ -10,21 +10,21 @@
 <script type='text/javascript'>
 
     //instance
-    var lottery = new Lottery(2);
-
-    //add
-    lottery.add('maruyama');
-    lottery.add('terada');
-    lottery.add('miyamoto');
-    lottery.add('tanaka');
-
-    //check before getWinners
-    lottery.isSize();
-    lottery.isMembersCunt();
-
-    //getWinners
-    lottery.getMembers();
-    lottery.getWinners();
+    // var lottery = new Lottery(2);
+    //
+    // //add
+    // lottery.add('maruyama');
+    // lottery.add('terada');
+    // lottery.add('miyamoto');
+    // lottery.add('tanaka');
+    //
+    // //check before getWinners
+    // lottery.isSize();
+    // lottery.isMembersCunt();
+    //
+    // //getWinners
+    // lottery.getMembers();
+    // lottery.getWinners();
 /*
     //onec more
     lottery.resetWinners();
@@ -35,6 +35,20 @@
 lottery.isMembers('')
 lottery.isMembers('tanaka');
 */
+
+function easyTest(){
+    var lottery = new Lottery(2);
+
+    //add
+    lottery.add('maruyama');
+    lottery.add('terada');
+    lottery.add('miyamoto');
+    lottery.add('tanaka');
+
+    //getWinners
+    console.log(lottery.getWinners());
+}
+easyTest();
 </script>
 </body>
 </html>
