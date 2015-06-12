@@ -27,12 +27,10 @@
         if (this.size >= this.members.length) return this.members;
         var members = this.members.concat();
         var winnersCount = this.size;
-        var winnerIndex;
-        var winner;
 
         while ( winnersCount===0,winnersCount--){
-            winnerIndex = Math.floor( Math.random() * members.length )
-            winner = members.splice(winnerIndex,1);
+            var winnerIndex = Math.floor( Math.random() * members.length );
+            var winner = members.splice(winnerIndex,1);
             this.winners.push(winner[0]);
         };
         return this.winners;
