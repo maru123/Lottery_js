@@ -6,7 +6,7 @@
     };
     Lottery.prototype.add = function(name){
         if (this.isNotName(name)) return false;
-        if (!this.isMembers(name)) return false;
+        if (this.isNotNewMember(name)) return false;
         this.members.push(name);
         return true;
     };
@@ -16,13 +16,13 @@
         }
         return false;
     };
-    Lottery.prototype.isMembers = function(name){
+    Lottery.prototype.isNotNewMember = function(name){
         for (var i = 0; i < this.members.length; i++) {
             if (this.members[i] === name){
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     };
     Lottery.prototype.getWinners = function(){
         this.resetWinners();
