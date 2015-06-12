@@ -35,11 +35,11 @@
 lottery.isMembers('')
 lottery.isMembers('tanaka');
 */
-function expectation(expect){
+function expectation(expect, context){
     if(expect) {
-        return console.log("Success!!");
+        return console.log("Success:" + context);
     } else {
-        alert("Fail!!");
+        alert("Fail:" + context);
     }
 }
 function easyTest(){
@@ -57,32 +57,41 @@ function easyTest(){
     console.log(lottery.getWinners());
     console.log("/ Case1 End /");
 
-    console.log("Case2: Must be all members are winner.")
+    console.log("Case2")
     var lottery2 = new Lottery(3);
     lottery2.add('maruyama');
     lottery2.add('terada');
     var winners = lottery2.getWinners();
     var expect2 = (winners.indexOf("maruyama") > -1 && winners.indexOf("terada") > -1);
-    expectation(expect2);
+    expectation(expect2, "Must be all members are winner.");
     console.log("/ Case2 End /");
 
-    console.log("Case3: Must be returns an empty array");
+    console.log("Case3");
     var lottery3 = new Lottery(0);
     lottery3.add('maruyama');
     lottery3.add('terada');
     var winners = lottery3.getWinners();
     // expect: true
     var expect3 = (typeof winners == "object" && winners.length == 0);
-    expectation(expect3);
+    expectation(expect3, "Must be returns an empty array");
     console.log("/ Case3 End /");
 
-    console.log("Case4: Must be returns an empty array");
+    console.log("Case4");
     var lottery4 = new Lottery(0);
     var winners = lottery4.getWinners();
     var expect4 = (typeof winners == "object" && winners.length == 0);
-    expectation(expect4);
+    expectation(expect4, "Must be returns an empty array");
     console.log("/ Case4 End /");
 
+    console.log("Case5");
+    var lottery5 = new Lottery(2);
+    expectation(!lottery5.add(''), "Must be returns false");
+    lottery5.add('terada');
+    expectation(!lottery5.add('terada'), "Must be returns false");
+    var winners5 = lottery5.getWinners();
+    var expect5 = (winners5.length == 1 && winners5.indexOf("terada") == 0);
+    expectation(expect5, "Must be returns ['terda']");
+    console.log("/ Case5 End /");
 
 }
 easyTest();
